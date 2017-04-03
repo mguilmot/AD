@@ -13,23 +13,9 @@ def txt2lst(text=""):
         ==> ['hello','world','This','Is','Me']
     '''
 
-    def delEmpty(lst=[]):
-        '''
-            Deletes the list items containing only a space or '\n'
-            Deletes the list items <2, strips leading and ending spaces
-            Expectsa list as input, returns a list as output
-        '''
-        
-        lst = list(filter(None,lst))
-        lst = [item.strip() for item in lst if len(item)>1]
-
-        return lst
-
-    lst = text.split("\n")
-    lst = delEmpty(lst)
-
-    return lst
-
+    lst = filter(None,text.split("\n"))
+    return [item.strip() for item in lst if len(item)>1]
+    
 def userInfo(lst=[],request="info",resulttxtFile="output.txt",resultcsvFile="output.csv",csv=False):
     '''
         Returns AD information about a provided AD username
