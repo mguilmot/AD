@@ -131,9 +131,9 @@ def groupInfo(lst=[],request="members",resulttxtFile="output.txt"):
 
     if len(success)>0:
         if len(errors)>0:
-            text = ", but with errors."
+            text = "With errors. Some group\nnames probably do not exist."
         else:
-            text = "without errors."
+            text = "Without errors."
         succeeded = True
         writeFile(text="",filename=resulttxtFile,mode="w")
         for num,lstGroups in enumerate(success_lsts):

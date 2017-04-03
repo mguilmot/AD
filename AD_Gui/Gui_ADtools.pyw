@@ -48,6 +48,7 @@ class runApplication(Ui_MainWindow):
         self.ui.pushButtonUserInfo.clicked.connect(lambda: self.buttonactions_userInfo(csv=False,text=self.ui.plainTextEditUserNames.toPlainText()))
         self.ui.pushButtonUserInfoCsv.clicked.connect(lambda: self.buttonactions_userInfo(csv=True,text=self.ui.plainTextEditUserNames.toPlainText()))
         self.ui.pushButtonUserInfoGroups.clicked.connect(lambda: self.buttonactions_userInfo(request="groups",csv=False,text=self.ui.plainTextEditUserNames.toPlainText()))
+        self.ui.pushButtonGroupMembership.clicked.connect(lambda: self.buttonactions_groupInfo(request="members",text=self.ui.plainTextEditGroupNames.toPlainText()))
     def buttonactions_test(self):
         # Test button(s)
         self.ui.pushButtonTest.show()
@@ -71,6 +72,15 @@ class runApplication(Ui_MainWindow):
             self.diagSuc(title="Success",text="Successful. "+self.userInfo[1],filename=self.filename)
         else:
             self.diagNot(title="Error",text="Error(s). " +self.userInfo[1])
+    def buttonactions_groupInfo(self,request,text):
+        self.lst=txt2lst(text)
+        self.filename=mainSettings["resulttxtFile"]
+        self.groupInfo=groupInfo(lst=self.lst,resulttxtFile=self.filename,request=request)
+        if self.groupInfo[0] == True:
+            self.diagSuc(title="Success",text="Successful. "+self.groupInfo[1],filename=self.filename)
+        else:
+            self.diagNot(title="Error",text="Error(s). " +self.groupInfo[1])
+        pass
     def diagNot(self,title,text,width=mainSettings['DialogNotification_w'],height=mainSettings['DialogNotification_h']):
         self.diag_title=title
         self.diag_text=text
