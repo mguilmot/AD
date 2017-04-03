@@ -45,7 +45,9 @@ class runApplication(Ui_MainWindow):
         # Uncomment next line to make the test button(s) visible
         # self.buttonactions_test()
         self.ui.pushButtonOpenLastFile.clicked.connect(self.buttonactions_openLastFile)
-        self.ui.pushButtonUserInfo.clicked.connect(lambda: self.buttonactions_userInfo(self.ui.plainTextEditUserNames.toPlainText()))
+        self.ui.pushButtonUserInfo.clicked.connect(lambda: self.buttonactions_userInfo(csv=False,text=self.ui.plainTextEditUserNames.toPlainText()))
+        self.ui.pushButtonUserInfoCsv.clicked.connect(lambda: self.buttonactions_userInfo(csv=True,text=self.ui.plainTextEditUserNames.toPlainText()))
+        self.ui.pushButtonUserInfoGroups.clicked.connect(lambda: self.buttonactions_userInfo(request="groups",csv=False,text=self.ui.plainTextEditUserNames.toPlainText()))
     def buttonactions_test(self):
         # Test button(s)
         self.ui.pushButtonTest.show()
@@ -58,12 +60,17 @@ class runApplication(Ui_MainWindow):
                 openFile(mainSettings['resulttxtFile'])
         except FileNotFoundError:
             self.diagNot(title="File Error",text="Error: unable to open file.")
-    def buttonactions_userInfo(self,text):
+    def buttonactions_userInfo(self,text,request="info",csv=False):
         self.lst=txt2lst(text)
-        print(self.lst)
-        self.userInfo=userInfo(lst=self.lst,request="info",resulttxtFile=mainSettings["resulttxtFile"])
-        print(self.userInfo)
-        
+        if not csv:
+            self.filename=mainSettings["resulttxtFile"]
+        else:
+            self.filename=mainSettings["resultcsvFile"]
+        self.userInfo=userInfo(lst=self.lst,resulttxtFile=self.filename,csv=csv,request=request)
+        if self.userInfo[0] == True:
+            self.diagSuc(title="Success",text="Successful. "+self.userInfo[1],filename=self.filename)
+        else:
+            self.diagNot(title="Error",text="Error(s). " +self.userInfo[1])
     def diagNot(self,title,text,width=mainSettings['DialogNotification_w'],height=mainSettings['DialogNotification_h']):
         self.diag_title=title
         self.diag_text=text

@@ -59,6 +59,13 @@ def userInfo(lst=[],request="info",resulttxtFile="output.txt",resultcsvFile="out
                 success_dicts.append(dictDetails)
             elif request=="groups":
                 lstGroups = userobj.get_groupmembership()
+                lstGroupstextHeader="Group memberships of: "+user+"\n"
+                try:
+                    lstGroupstext+=lstGroupstextHeader
+                except:
+                    lstGroupstext=lstGroupstextHeader
+                lstGroupstext+=len(lstGroupstextHeader)*"-"+"\n"
+                lstGroupstext+="\n".join([group for group in lstGroups])+"\n\n"
                 success_lsts.append(lstGroups)
     
     # Did our function succeed
@@ -71,18 +78,21 @@ def userInfo(lst=[],request="info",resulttxtFile="output.txt",resultcsvFile="out
                 for dictDetails in success_dicts:
                     writecsv(text=convertToText(dictDetails=dictDetails,csv=True),filename=resultcsvFile,mode="a")
         else:
-            writeplain(text="",filename=resulttxtFile,mode="w")
-            if success_dicts:
-                for dictDetails in success_dicts:
-                    writeplain(text = convertToText(dictDetails=dictDetails,csv=False)+"\n",filename=resulttxtFile,mode="a")
+            if request=="info":
+                writeplain(text="",filename=resulttxtFile,mode="w")
+                if success_dicts:
+                    for dictDetails in success_dicts:
+                        writeplain(text = convertToText(dictDetails=dictDetails,csv=False)+"\n",filename=resulttxtFile,mode="a")
+            elif request=="groups":
+                writeplain(text=lstGroupstext,filename=resulttxtFile,mode="w")
 
         if len(errors)>0:
-            resulttext = ", but with errors."
+            resulttext = "With errors. Some usernames\nprobably do not exist."
         else:
-            resulttext = "without errors."
+            resulttext = "Without errors."
     else:
         succeeded=False
-        resulttext = ": user name(s) do not exist."
+        resulttext = "User name(s) do not exist."
     
     # For debugging
     # print("errors:",errors)
@@ -185,3 +195,4 @@ def writeFile(text="",filename="output.txt",mode="a"):
     f.close()
     return
 
+userInfo(lst=['EVLIL'],request="groups",resulttxtFile="output.txt",resultcsvFile="output.csv",csv=False)
