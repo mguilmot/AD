@@ -16,29 +16,18 @@ def txt2lst(text=""):
     def delEmpty(lst=[]):
         '''
             Deletes the list items containing only a space or '\n'
+            Deletes the list items <2, strips leading and ending spaces
             Expectsa list as input, returns a list as output
         '''
-        for num,item in enumerate(lst):
-            if len(item)<2 or item=="\n":
-                del lst[num]
-        return lst
+        
+        lst = list(filter(None,lst))
+        lst = [item.strip() for item in lst if len(item)>1]
 
-    def delSpaces(word=""):
-        '''
-            Deletes leading spaces in our list items
-            Expects a text string as input, returns a text string as output
-        '''
-        start = 0
-        for num,letter in enumerate(word):
-            if letter != " ":
-                start = num
-                break
-        return word[start:]
+        return lst
 
     lst = text.split("\n")
     lst = delEmpty(lst)
-    for num,item in enumerate(lst):
-        lst[num] = delSpaces(item)
+
     return lst
 
 def userInfo(lst=[],request="info",resulttxtFile="output.txt",resultcsvFile="output.csv",csv=False):
