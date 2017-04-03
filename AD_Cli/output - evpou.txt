@@ -1,0 +1,33 @@
+User: EVPOU
+Group memberships:
+ANT HelpDesk
+ANT Site Admins
+BBS.A.IAM_CBG_C_internal_P
+BE.BRS.User-Reset-Password
+BMS.A.WPS.GDWeb.User
+BMS.U.0063.ANT.ALL_CONTRACTORS
+CTX.PRD.DL.BMS.SAP_PAD_P80
+CTX.PRD.G.AD_Users_and_Computers
+CTX.PRD.G.Lotus_Notes_8_Marketing
+CTX.PRD.G.ServiceCenterClient_6288
+CTX.PRD.G.WindowsExplorer Marketing
+IM-KT.WTS-CSG-ACETool
+IM-KT.WTS-CSG-AD-UsersComputers
+IM-KT.WTS-CSG-IE
+IM-KT.WTS-CSG-IE-LandeskRemote
+IM-KT.WTS-CSG-Notes
+IM-KT.WTS-CSG-PAD-C23
+IM-KT.WTS-CSG-PAD-P80_P1B
+IM-KT.WTS-CSG-PAD-P85
+IM-KT.WTS-CSG-ServiceCenter
+IM-KT.WTS-CSG-USER
+bbs.a.covestro_all_contractors
+bbs.a.ctx.prd.hpsm.asset_manager
+bbs.a.ctx.prd.hpsm.service_manager
+bbs.a.ctx.prd.shared.all_users
+bbs.a.evammdyntest
+bbs.a.move-iptmigration-ema
+bgp.u.be.0063.ant.sg.resource.admins
+bhc.u.BHC_All_Contractors_16
+bms.a.citrix-profile-onsite-support
+

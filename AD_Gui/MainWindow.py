@@ -1,0 +1,110 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file '.\MainWindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.8.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(421, 254)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.pushButtonTest = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonTest.setGeometry(QtCore.QRect(100, 10, 75, 23))
+        self.pushButtonTest.setObjectName("pushButtonTest")
+        self.labelUserOperations = QtWidgets.QLabel(self.centralwidget)
+        self.labelUserOperations.setGeometry(QtCore.QRect(20, 20, 81, 16))
+        self.labelUserOperations.setObjectName("labelUserOperations")
+        self.labelGroupOperations = QtWidgets.QLabel(self.centralwidget)
+        self.labelGroupOperations.setGeometry(QtCore.QRect(220, 20, 81, 16))
+        self.labelGroupOperations.setObjectName("labelGroupOperations")
+        self.plainTextEditUserNames = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEditUserNames.setGeometry(QtCore.QRect(20, 40, 161, 71))
+        self.plainTextEditUserNames.setObjectName("plainTextEditUserNames")
+        self.plainTextEditGroupNames = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEditGroupNames.setGeometry(QtCore.QRect(220, 40, 161, 71))
+        self.plainTextEditGroupNames.setObjectName("plainTextEditGroupNames")
+        self.pushButtonUserInfo = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonUserInfo.setGeometry(QtCore.QRect(20, 120, 161, 23))
+        self.pushButtonUserInfo.setObjectName("pushButtonUserInfo")
+        self.pushButtonUserInfoGroups = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonUserInfoGroups.setGeometry(QtCore.QRect(20, 180, 161, 23))
+        self.pushButtonUserInfoGroups.setObjectName("pushButtonUserInfoGroups")
+        self.pushButtonUserInfoCsv = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonUserInfoCsv.setGeometry(QtCore.QRect(20, 150, 161, 23))
+        self.pushButtonUserInfoCsv.setObjectName("pushButtonUserInfoCsv")
+        self.pushButtonGroupMembership = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonGroupMembership.setGeometry(QtCore.QRect(220, 120, 161, 23))
+        self.pushButtonGroupMembership.setObjectName("pushButtonGroupMembership")
+        self.pushButtonOpenLastFile = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButtonOpenLastFile.setGeometry(QtCore.QRect(220, 180, 161, 23))
+        self.pushButtonOpenLastFile.setObjectName("pushButtonOpenLastFile")
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(190, 10, 16, 191))
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setGeometry(QtCore.QRect(210, 150, 171, 16))
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName("line_2")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 421, 21))
+        self.menubar.setObjectName("menubar")
+        self.menuAbout = QtWidgets.QMenu(self.menubar)
+        self.menuAbout.setObjectName("menuAbout")
+        self.menuFile = QtWidgets.QMenu(self.menubar)
+        self.menuFile.setObjectName("menuFile")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.actionREADME = QtWidgets.QAction(MainWindow)
+        self.actionREADME.setObjectName("actionREADME")
+        self.actionLICENSE = QtWidgets.QAction(MainWindow)
+        self.actionLICENSE.setObjectName("actionLICENSE")
+        self.actionVisitUs = QtWidgets.QAction(MainWindow)
+        self.actionVisitUs.setObjectName("actionVisitUs")
+        self.actionExit = QtWidgets.QAction(MainWindow)
+        self.actionExit.setObjectName("actionExit")
+        self.menuAbout.addAction(self.actionREADME)
+        self.menuAbout.addAction(self.actionLICENSE)
+        self.menuAbout.addAction(self.actionVisitUs)
+        self.menuFile.addAction(self.actionExit)
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuAbout.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButtonTest.setText(_translate("MainWindow", "Test Dialog"))
+        self.labelUserOperations.setText(_translate("MainWindow", "User operations"))
+        self.labelGroupOperations.setText(_translate("MainWindow", "Group operations"))
+        self.plainTextEditUserNames.setPlainText(_translate("MainWindow", "adUser1\n"
+"adUser2\n"
+"adUser3"))
+        self.plainTextEditGroupNames.setPlainText(_translate("MainWindow", "adGroup1\n"
+"adGroup2\n"
+"adGroup3"))
+        self.pushButtonUserInfo.setText(_translate("MainWindow", "Get user information"))
+        self.pushButtonUserInfoGroups.setText(_translate("MainWindow", "Get group memberships"))
+        self.pushButtonUserInfoCsv.setText(_translate("MainWindow", "Get user information to CSV"))
+        self.pushButtonGroupMembership.setText(_translate("MainWindow", "Get group memberships"))
+        self.pushButtonOpenLastFile.setText(_translate("MainWindow", "Open last file"))
+        self.menuAbout.setTitle(_translate("MainWindow", "About"))
+        self.menuFile.setTitle(_translate("MainWindow", "File"))
+        self.actionREADME.setText(_translate("MainWindow", "README"))
+        self.actionLICENSE.setText(_translate("MainWindow", "LICENSE"))
+        self.actionVisitUs.setText(_translate("MainWindow", "Visit Us"))
+        self.actionExit.setText(_translate("MainWindow", "Exit"))
+

@@ -1,0 +1,16 @@
+User: EVLIL
+Homedir: \\bmsnas02.ad.glpoly.net\EVLIL
+Loginscript: BE\0063\ANT\Loginscript_PWP.vbs
+Name: Mike Guilmot
+Password last set: 2017-03-03 09:08:45
+Last login: 2017-03-27 06:27:53
+Enabled: True
+
+User: EQVRE
+Homedir: \\bmsnas02.ad.glpoly.net\EQVRE
+Loginscript: BE\0063\ANT\Loginscript_PWP.vbs
+Name: _Mike Guilmot
+Password last set: 2017-03-03 09:09:02
+Last login: 2017-03-27 09:40:01
+Enabled: True
+
